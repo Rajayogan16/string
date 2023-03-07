@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+    ::placeholder{
+        text-align: center;
+    }
+    label{
+        color: #ffffff;
+    }
+</style>
+<body>
+    <div class="container my-5 border bg-secondary">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form  text-center">
+                        <h1 class="h1 display-1 fw-bolder text-light">String Methods</h1>
+                        <div class="count mt-2 border p-3">
+                        <input type="text" name="string" id="text" class="input-group" placeholder="Enter the Text You want to Examine through the below String Methods">
+                        <p id="demo" class="text-center bg-success text-light my-2"></p>
+                        <button onclick="length()" class="btn btn-primary">String length</button>
+                        </div>
+                        <div class=" slice mt-2 border p-3">
+                            <input type="text" name="string" id="textslice" class="input-group" placeholder="Enter the Text You want to Examine through the below String Methods"><br>
+                             <label for="first-slice">slice:</label>
+                            <input type="number"  id="first-slice" placeholder="first" >
+                             <label for="last-slice">,</label>
+                             <input type="number"  id="last-slice" placeholder="last"><br>
+                             <button class="btn btn-primary my-3" onclick="slice()">Slice method</button>
+                             <p id="demo1" class="text-center bg-success text-light my-2"></p>
+                        </div>
+                        <div class="substring mt-2 border p-3">
+                            <input type="text" name="string" id="textsubstr" class="input-group" placeholder="Enter the Text You want to Examine through the below String Methods"><br>
+                            <label for="first-slice">substring:</label>
+                            <input type="number"  id="first-sub" placeholder="position">
+                            <label for="last-slice">,</label>
+                            <input type="number"  id="last-sub" placeholder="length"><br>
+                            <button class="btn btn-primary my-3" onclick="substring()">Substring method</button>
+                            <p id="demo2" class="text-center bg-success text-light my-2"></p>
+                       </div>
+                       <div class="replace mt-2 border p-3">
+                        <input type="text" name="string" id="textrep" class="input-group" placeholder="Enter the Text You want to Examine through the below String Methods"><br>
+                           <label for="first-rep">Replace:</label>
+                           <input type="text"  id="first-rep" placeholder="with">
+                           <label for="last-rep">,</label>
+                           <input type="text"  id="last-rep" placeholder="that"><br>
+                           <button class="btn btn-primary my-3" onclick="replace()">Replace method</button>
+                           <p id="demo3" class="text-center bg-success text-light my-2"></p>
+                       </div>
+                       <div class="replaceall mt-2 border p-3">
+                           <input type="text" name="string" id="textrepall" class="input-group" placeholder="Enter the Text You want to Examine through the below String Methods"><br>
+                           <label for="first-repa">ReplaceAll:</label>
+                           <input type="text"  id="first-repa" placeholder="with">
+                           <label for="last-repa">,</label>
+                           <input type="text"  id="last-repa" placeholder="that"><br>
+                           <button class="btn btn-primary my-3" onclick="replaceall()">Replaceall method</button>
+                           <p id="demo4" class="text-center bg-success text-light my-2"></p>
+                       </div>
+                       <div class="case mt-2 border p-3">
+                           <input type="text" name="string" id="textcase" class="input-group" placeholder="Enter the Text You want to Examine through the below String Methods">
+                           <br>
+                           <button class="btn btn-primary" onclick="upper()">Uppercase</button>
+                           <button class="btn btn-primary" onclick="lower()">Lowercase</button>
+                           <p id="demo5" class="text-center bg-success text-light my-2"></p>
+                       </div>
+                       <div class="concat mt-3 border p-3">
+                        <label for="first-repa">Text1:</label>
+                        <input type="text"  id="Text1" >
+                        <label for="last-repa">Text2:</label>
+                        <input type="text"  id="Text2"><br>
+                        <button class="btn btn-primary my-3" onclick="concate()">Concate method</button>
+                        <p id="demo6" class="text-center bg-success text-light my-2"></p>
+                    </div>
+                    <div class="Trim mt-2 border p-3">
+                        <input type="text" name="string" id="texttrim" class="input-group" placeholder="Enter the Text You want to Examine the below String Methods"><br>
+                        <button class="btn btn-primary" onclick="trim()">Trim</button>
+                        <button class="btn btn-primary" onclick="trimstart()">Trimstart</button>
+                        <button class="btn btn-primary" onclick="trimend()">TrimEnd</button>
+                        <p id="demo7" class="text-center bg-success text-light mt-2"></p>
+                        <p id="demo8" class="text-center bg-success text-light mb-2"></p>
+                    </div>
+                    <div class="padding mt-3 border p-3">
+                        <input type="text" name="string" id="textpad" class="input-group" placeholder="Enter the Text You want to Examine through the below String Methods">
+                        <br>
+                        <label for="first-repa">pad:</label>
+                        <input type="number"  id="first-pad" placeholder="position">
+                        <label for="last-repa">,</label>
+                        <input type="text"  id="last-pad" placeholder="text"><br>
+                        <button class="btn btn-primary my-3" onclick="padstart()">Pad Start</button>
+                        <button class="btn btn-primary my-3" onclick="padend()">Pad End</button>
+                        <p id="demo9" class="text-center bg-success text-light my-2"></p>
+                    </div>
+                    <div class="Extract mt-2 border p-3">
+                        <input type="text" name="string" id="textextract" class="input-group" placeholder="Enter the Text You want to Examine through the below String Methods">
+                        <br>
+                        <label for="Extract">Text position:</label>
+                        <input type="number"  id="Extract"><br><br>
+                        <button class="btn btn-primary" onclick="charAt()">CharAt</button>
+                        <!--<button class="btn btn-primary" onclick="CharcodeAt()">CharCodeAt</button>-->
+                        <button class="btn btn-primary" onclick="PropertyAccess()">Property Access</button>
+                        <p id="demo10" class="text-center bg-success text-light my-2"></p>
+                    </div>
+                    <div class="split my-5 p-3 border">
+                        <label for="array">Enter an array with three elements</label>
+                        <input type="text"  id="array"><br><br>
+                        <label for="split">split here:</label>
+                        <input type="text" id="split"><br><br>
+                        <button class="btn btn-primary" onclick="split()">Split</button>
+                        <p id="demo11" class="text-center bg-success text-light my-2"></p>
+                        <p id="demo12" class="text-center bg-success text-light my-2"></p>
+                        <p id="demo13" class="text-center bg-success text-light my-2"></p>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+   
+    
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="script.js"></script>    
+</body>
+</html>
